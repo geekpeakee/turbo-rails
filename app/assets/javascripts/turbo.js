@@ -4020,8 +4020,9 @@ class TurboCableStreamSourceElement extends HTMLElement {
     };
   }
 }
-
-customElements.define("turbo-cable-stream-source", TurboCableStreamSourceElement);
+if (customElements.get("turbo-cable-stream-source") === undefined) {
+    customElements.define("turbo-cable-stream-source", TurboCableStreamSourceElement);
+}
 
 function encodeMethodIntoRequestBody(event) {
   if (event.target instanceof HTMLFormElement) {
